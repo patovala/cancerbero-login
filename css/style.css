@@ -1,0 +1,49 @@
+body {
+  padding: 0 20px 0 20px;
+  background-color: black;
+}
+
+.border{
+	padding: 3px;
+	border:2px dashed #fff;
+}
+
+.groove{
+	border-style: ridge;
+	/*background-color: white;*/
+	padding: 3px 3px 3px 3px;
+
+}
+
+section#img-font{
+	background-image: url(../img/calomel_image.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%; 
+	/*background-position: center 60%;*/
+	height: 650px;
+	overflow: none;	
+}
+
+.image-logo{
+	width: 100%;
+	padding: 2px;
+	margin-left: 25em;
+}
+
+.center-button{
+	/*margin-left: 300px;*/
+	margin-top: 50px;
+}
+
+footer{
+	padding: 10px 0 10px 0;
+	font-family: "Courier New", Courier, monospace;
+	margin-top: 20px;
+	color: #fff;
+	border: 0;
+	/*padding: 10px 0 10px 0;*/
+}
+
+footer p{
+	color: #EBA312;
+}
