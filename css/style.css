@@ -1,6 +1,17 @@
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
 body {
   padding: 0 20px 0 20px;
   background-color: black;
+}
+
+.container-fluid{
+	margin: 0;
+	padding: 0;
 }
 
 .border{
@@ -8,26 +19,43 @@ body {
 	border:2px dashed #fff;
 }
 
-.groove{
-	border-style: ridge;
-	/*background-color: white;*/
-	padding: 3px 3px 3px 3px;
-
-}
 
 section#img-font{
 	background-image: url(../img/calomel_image.jpg);
 	background-repeat: no-repeat;
-	background-size: 100% 100%; 
-	/*background-position: center 60%;*/
+	background-size: 100% 100%;
+	width: auto;
 	height: 650px;
-	overflow: none;	
+}
+
+.panel-body {
+	background-color: black;
+	opacity: 0.6;
+}
+
+.panel-body p {
+	margin: 0;
+	color: #fff;
+	text-align: center;
+}
+
+.texto{
+	text-align: center;
+	color: black;
+	font-family: sans-serif;
+	background: #FFFFFF;
+	width:300px;
+	border-radius: 15px;
+	font-size: 110%;
+	opacity: 0.6;
+	background-color: gray;
+	margin-left: auto;
+	padding: 10px;
 }
 
 .image-logo{
-	width: 100%;
-	padding: 2px;
-	margin-left: 25em;
+	margin-top: 20px;
+	margin-left: 30px;
 }
 
 .center-button{
@@ -35,15 +63,21 @@ section#img-font{
 	margin-top: 50px;
 }
 
-footer{
-	padding: 10px 0 10px 0;
+}
+
+footer#feature{
 	font-family: "Courier New", Courier, monospace;
 	margin-top: 20px;
 	color: #fff;
-	border: 0;
-	/*padding: 10px 0 10px 0;*/
+	/*padding: 0px 20px 0 20;*/
+}
+
+footer h2{
+	font-size: 260%;
+	color: #fff;
 }
 
 footer p{
 	color: #EBA312;
 }
+
