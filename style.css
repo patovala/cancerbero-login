@@ -16,7 +16,7 @@ body {
 	border:2px dashed #fff;
 }
 section#img-font{
-	background-image: url(../img/calomel_image.jpg);
+	background-image: url(calomel_image.jpg);
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	width: auto;
