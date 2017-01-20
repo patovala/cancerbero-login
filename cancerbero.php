@@ -4,16 +4,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cancerbero Login</title>
-	<link href="captiveportal-bootstrap.css" rel="stylesheet">
-	<link href="captiveportal-style.css" rel="stylesheet">
+	<title>cancerbero_index</title>
+	<link href="bootstrap.css" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
 </head>
 <body>
 
 	<section id="img-font">
 	<div class="container">
 		<div class="row">
-                        <div class="msg msg-error">$$PORTAL_MESSAGE$</div>
+                        <? if($PORTAL_MESSAGE$):?><div class="msg msg-error">$$PORTAL_MESSAGE$</div><? endif; ?>
 			<div class="col-md-7 col-md-offset-3 center-button">
 				<h4><span class="label label-default">Acceder usuario y contraseña</span></h4>
 				<form class="form-inline" action="$PORTAL_ACTION$">
@@ -54,8 +54,8 @@
 							<p><span class="border">visit: WWW.pupilabox.net.ec for more info about this service</span></p>
 						</div>
 						<div class="col-md-5 col-md-offset-1">
-							<img class="pull-right image-logo" src="captiveportal-ioet.png" width="70">
-							<img class="pull-right image-logo" src="captiveportal-pupilabox.png" width="105">
+							<img class="pull-right image-logo" src="ioet.png" width="70">
+							<img class="pull-right image-logo" src="pupilabox.png" width="105">
 							<img class="pull-right image-logo" src="captiveportal-kokenlogo.png" width="65">
 						</div>
 					</div>
