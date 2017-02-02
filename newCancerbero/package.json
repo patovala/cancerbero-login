@@ -1,0 +1,28 @@
+{
+  "name": "cancerbero-login",
+  "version": "1.0.0",
+  "description": "cancerbero login demostration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cancerbero",
+    "login",
+    "demostration",
+    "practice"
+  ],
+  "author": "ioet",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^6.7.2",
+    "browser-sync": "^2.18.7",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-postcss": "^6.3.0",
+    "gulp-rename": "^1.2.2",
+    "lost": "^8.0.0",
+    "rucksack-css": "^0.9.1"
+  }
+}
