@@ -1,14 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
 h1 {
+  color: #242424;
+  font-size: 65px;
+  line-height: 83px;
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+h1.invert {
+  color: white;
+}
+h1.secondary {
   color: #7a2eff;
-  font-size: calc(20px + 20 * ((100vw - 420px) / 860));
 }
-@media screen and (min-width: 1280px) {
-  h1 {
-    font-size: 40px;
-  }
+.small-text {
+  font-size: 20px;
+  color: white;
 }
-@media screen and (max-width: 420px) {
-  h1 {
-    font-size: 20px;
-  }
+.placeholdet-text {
+  font-size: normal;
+  color: #c7c7cd;
+}
+.tab-text {
+  font-size: 14px;
+  color: #0076ff;
+}
+.button {
+  padding: 10px 30px;
+  background-color: transparent;
+  border-radius: 50px;
+  color: #242424;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+.button:hover {
+  text-decoration: none;
+}
+.button.primary {
+  background-color: #7a2eff;
+  color: white;
+}
+.button.primary:hover {
+  background-color: #5b00fa;
+}
+.button.secondary {
+  background-color: #fe2851;
+  color: white;
+}
+.button.secondary:hover {
+  background-color: #f2012f;
+}
+body {
+  font-family: 'Roboto';
+  font-size: reposive 14px 16px;
+  width: 100vw;
+  height: 100vh;
+}
+.cancerbero {
+  background-image: url('/assets/images/captiveportal.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.cancerbero-container {
+  height: 100%;
+  width: 100%;
+}
+.cancerbero::before {
+  content: '';
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: -webkit-linear-gradient(328deg, #3023ae, #c86dd7 100%, #c86dd7 100%, #c86dd7);
+  background-image: linear-gradient(122deg, #3023ae, #c86dd7 100%, #c86dd7 100%, #c86dd7);
 }
