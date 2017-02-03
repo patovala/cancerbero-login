@@ -18,11 +18,15 @@
   "devDependencies": {
     "autoprefixer": "^6.7.2",
     "browser-sync": "^2.18.7",
+    "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0",
+    "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.3.0",
     "gulp-rename": "^1.2.2",
     "lost": "^8.0.0",
+    "postcss-custom-media": "^5.0.1",
+    "postcss-media-minmax": "^2.1.2",
     "rucksack-css": "^0.9.1"
   }
 }

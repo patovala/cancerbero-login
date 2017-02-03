@@ -1,35 +1,52 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+.text-invert{
+  color: white;
+}
 
 h1{
-  color: @black;
+  color: @color-primary;
   font-size: 65px;
   line-height: 83px;
   text-transform: uppercase;
   font-weight: bolder;
 
+  @media (--small){
+    font-size: 10px;
+  }
+
   &.invert{
     color: white;
+    .text-invert();
   }
 
   &.secondary{
-    color: @purplish-blue;
+    color: @color-secondary;
   }
-
 }
-
-
 
 .small-text{
   font-size: 20px;
   color: white;
+
+  &.invert{
+    .text-invert();
+  }
 }
 
 .placeholdet-text{
   font-size: normal;
-  color: @silver;
+  color: @color-default;
+
+  &.invert{
+    .text-invert();
+  }
 }
 
 .tab-text{
   font-size: 14px;
-  color: @bright-blue;
+  color: @color-secondary;
+
+  &.invert{
+    .text-invert();
+  }
 }
