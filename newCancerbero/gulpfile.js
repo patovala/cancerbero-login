@@ -5,6 +5,10 @@ const gulp         = require('gulp'),
       rucksack     = require('rucksack-css'),
       lost         = require('lost'),
       browserSync  = require('browser-sync').create(),
+      minmax       = require('postcss-media-minmax'),
+      customMedia  = require('postcss-custom-media'),
+      plumber      = require('gulp-plumber'),
+      cssnano      = require('cssnano'),
       rename       = require('gulp-rename');
 
 var route = {
@@ -19,7 +23,10 @@ gulp.task('compile:css', function(){
   var processors =  [
     autoprefixer(),
     lost(),
-    rucksack()
+    rucksack(),
+    minmax(),
+    customMedia(),
+    cssnano()
   ]
 
   return gulp.src(route.less.entry)

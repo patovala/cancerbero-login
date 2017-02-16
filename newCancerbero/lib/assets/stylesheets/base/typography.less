@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+.text-invert{
+  color: white;
+}
+
+h1{
+  color: @color-primary;
+  font-size: 35px;
+  line-height: 33px;
+  text-transform: uppercase;
+  font-weight: bolder;
+
+  @media (--medium){
+    font-size: 65px;
+    line-height: 83px;
+  }
+
+  &.invert{
+    .text-invert();
+  }
+
+  &.secondary{
+    color: @color-secondary;
+  }
+}
+
+.small-text{
+  font-size: 10px;
+  color: white;
+
+  @media (--medium) {
+    font-size: 16px;
+  }
+
+  &.invert{
+    .text-invert();
+  }
+}
+
+.placeholdet-text{
+  font-size: normal;
+  color: @color-default;
+
+  &.invert{
+    .text-invert();
+  }
+}
+
+.tab-text{
+  font-size: 14px;
+  color: @color-secondary;
+
+  &.invert{
+    .text-invert();
+  }
+}
