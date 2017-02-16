@@ -5,17 +5,17 @@
 
 h1{
   color: @color-primary;
-  font-size: 65px;
-  line-height: 83px;
+  font-size: 35px;
+  line-height: 33px;
   text-transform: uppercase;
   font-weight: bolder;
 
-  @media (--small){
-    font-size: 10px;
+  @media (--medium){
+    font-size: 65px;
+    line-height: 83px;
   }
 
   &.invert{
-    color: white;
     .text-invert();
   }
 
@@ -25,8 +25,12 @@ h1{
 }
 
 .small-text{
-  font-size: 20px;
+  font-size: 10px;
   color: white;
+
+  @media (--medium) {
+    font-size: 16px;
+  }
 
   &.invert{
     .text-invert();

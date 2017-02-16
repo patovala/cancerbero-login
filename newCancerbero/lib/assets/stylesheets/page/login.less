@@ -34,5 +34,27 @@ body{
   &-left{
     height: 100%;
     .align-childs(column, space-between, flex-end);
+
+    .title{
+      text-align: right;
+    }
+
+    .footer{
+      .brands{
+        .align-childs(row, flex-end, center);
+
+        @media (--medium){
+          display: flex;
+          flex-direction: column;
+        }
+
+        img{
+          margin-right: 10px;
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }

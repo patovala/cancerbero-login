@@ -30,11 +30,9 @@ gulp.task('compile:css', function(){
   ]
 
   return gulp.src(route.less.entry)
-            .pipe(plumber())
             .pipe(less())
             .pipe(postcss(processors))
             .pipe(rename('styles.css'))
-            .pipe(plumber.stop())
             .pipe(gulp.dest(route.less.dest))
             .pipe(browserSync.stream())
 });
