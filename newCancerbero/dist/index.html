@@ -5,6 +5,7 @@
   <title>Cancerbero Login</title>
   <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/icomoon/fonts/style.css">
 </head>
 <body class="cancerbero">
 
@@ -12,7 +13,6 @@
     <div class="container">
       <div class="cancerbero-left col-md-6">
         <h1 class="title invert">CANCERBERO CAPTIVE PORTAL</h1>
-
         <div class="footer">
           <div class="brands">
             <img class="brands-logo" src="/assets/images/captiveportal-ioet.jpg" srcset="/assets/images/captiveportal-ioet@2x.jpg 2x" alt="ioet logo">
@@ -24,8 +24,36 @@
       </div>
 
       <div class="cancerbero-right col-md-6">
+        <div class="panelog">
+          <div class="login">
+            <ul class="nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#home">LOGIN</a></li>
+              <li><a data-toggle="tab" href="#menu1">TOKEN</a></li>
+            </ul>
 
-
+            <div class="tab-content">
+              <div id="home" class="tab-pane fade in active">
+                <div class="log"><h2>LOGIN</h2></div>
+                <form class="form">
+                    <input type="text" class="texto" placeholder="username">
+                    <input type="password" class="texto" placeholder="password">
+                    <div class="texto">
+                    <input type="submit" class="button primary" value="Ingresar">
+                  </div>
+                </form>
+              </div>
+              <div id="menu1" class="tab-pane fade">
+                <div class="log"><h2>TOKEN</h2></div>
+                <form class="form">
+                  <input type="text" class="texto" placeholder="token">
+                  <div class="texto">
+                    <input type="submit" class="button primary" value="Ingresar">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
