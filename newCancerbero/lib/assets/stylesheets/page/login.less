@@ -1,7 +1,7 @@
 body{
   font-family: 'Roboto';
   font-size: reposive 14px 16px;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
 }
 
@@ -11,16 +11,16 @@ body{
   background-size: cover;
   background-position: center;
 
-  .container{
-    height: 100%;
-  }
-
   &-container{
     height: 100%;
     width: 100%;
   }
 
-  &::before{
+  .container{
+    height: 100%;
+  }
+
+   &::before{
     content: '';
     opacity: 0.5;
     height: 100%;
@@ -28,33 +28,163 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    background-image: linear-gradient(122deg, #3023ae, #c86dd7 100%, #c86dd7 100%, #c86dd7)
+    background-image: linear-gradient(122deg, #3023ae, #c86dd7 100%, #c86dd7 100%, #c86dd7);
   }
 
   &-left{
     height: 100%;
+    @media (--small){
+      height: 100%;
+      position: absolute;
+      left: 0;
+    }
+    @media (--medium){
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      .align-childs(column, flex-end);
+    }
     .align-childs(column, space-between, flex-end);
 
     .title{
       text-align: right;
+      @media (--small){
+        text-align: center;
+      }
+      @media (--medium){
+        text-align: center;
+        margin: 0;
+      }
     }
 
     .footer{
-      .brands{
-        .align-childs(row, flex-end, center);
+      margin-bottom: 1em;
+      @media (--small){
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+          .small-text{text-align: center;}
 
-        @media (--medium){
+      }
+      @media (--medium){
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+      }
+      .brands{
+        margin-bottom: 2em;
+        @media (--small){
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          justify-content: center;
+          margin: 0;
+          width: 100%;
         }
 
+        @media (--medium){
+          .align-childs(row, center);
+          margin: 0;
+          margin-bottom: 1em;
+        }
+
+        .align-childs(row, flex-end, center);
+
         img{
-          margin-right: 10px;
+          margin-right: 15px;
+          @media (--small){
+            height: 25px;
+          }
+          @media (--medium){
+            height: 35px;
+          }
           &:last-child{
             margin-right: 0;
           }
         }
       }
     }
+  }
+
+  &-right{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    height: 100%;
+    @media (--small){
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @media (--medium){
+      height: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start
+    }
+    .panelog{
+      display: flex;
+      min-height: 320px; //PRUEBA
+      @media (--small){
+        margin: 0;
+        margin-bottom: 3em;
+      }
+      @media (--medium){
+        margin: 5% auto;
+        width: 450px; //PRUEBA
+      }
+      justify-content: center; //centrar contenido FLEX
+        .login{
+          background-color: white;
+          border-radius: 0.5em;
+          width: 300px;
+          height: 100%;
+          @media (--small){
+            width: 100%;
+          }
+          @media (--medium){
+            width: 65%;
+          }
+          align-self: flex-start;
+          text-align: center;
+          -webkit-box-shadow: 7px 9px 31px -4px rgba(0,0,0,0.85);
+          -moz-box-shadow: 7px 9px 31px -4px rgba(0,0,0,0.85);
+          box-shadow: 7px 9px 31px -4px rgba(0,0,0,0.85);
+        .log{
+          margin: 40px;
+        }
+        .form{
+            text-align: center;
+          .button.primary{
+            padding: 8px 40px 8px 40px;
+          }
+
+          .texto{
+            margin-bottom: 20px;
+            width: 70%;
+            display: inline-block;
+            &:last-child{
+              margin-top: 15px;
+            }
+          }
+        }
+        .nav-tabs > li{
+          text-align: center;
+          width: 50%;
+        }
+      }
+    }
+
   }
 }
