@@ -11,11 +11,16 @@ const gulp         = require('gulp'),
       cssnano      = require('cssnano'),
       rename       = require('gulp-rename');
 
+const del = require('del');
+
+const gulpLoadPlugins = require('gulp-load-plugins');
+const $ = gulpLoadPlugins();
+
 var route = {
   less: {
-    entry: './lib/assets/stylesheets/components.less',
-    dest: './dist/assets/css/',
-    lib: './lib/assets/stylesheets/**/*.less',
+    entry: './assets/stylesheets/components.less',
+    dest: './dist/',
+    lib: './assets/stylesheets/**/*.less',
   },
 };
 
@@ -32,22 +37,45 @@ gulp.task('compile:css', function(){
   return gulp.src(route.less.entry)
             .pipe(less())
             .pipe(postcss(processors))
-            .pipe(rename('styles.css'))
+            .pipe(rename('captiveportal-style.css'))
             .pipe(gulp.dest(route.less.dest))
             .pipe(browserSync.stream())
 });
 
+gulp.task('html', ['compile:css'], () => {
+  return gulp.src(['*.html', '*.php'])
+    .pipe($.useref({searchPath: ['.tmp', 'html', '.']}))
+    .pipe($.if('*.js', $.uglify()))
+    .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
+    //.pipe($.if('*.css', $.rev()))
+    //.pipe($.revReplace())
+    //.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe(gulp.dest('dist/'));
+});
+
+gulp.task('assets', () => {
+  return gulp.src(['assets/images/**/*', 'assets/js/*', 'assets/css/*'])
+    .pipe(gulp.dest('dist/'));
+});
+
 gulp.task('watch', function(){
   gulp.watch(route.less.lib, ['compile:css']);
-  gulp.watch('./dist/*.html').on('change', browserSync.reload);
+  gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
 gulp.task('serve', function() {
     browserSync.init({
         server: {
-          baseDir: './dist'
+          baseDir: ['.tmp', './dist'],
         }
     });
 });
 
-gulp.task('default', ['watch', 'serve']);
+gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+
+gulp.task('build', ['clean', 'html', 'compile:css', 'assets'], () => {
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+});
+
+gulp.task('default', ['watch', 'html', 'assets', 'serve']);
+
