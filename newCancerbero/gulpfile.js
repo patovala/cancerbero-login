@@ -15,6 +15,7 @@ const del = require('del');
 
 const gulpLoadPlugins = require('gulp-load-plugins');
 const $ = gulpLoadPlugins();
+const runSequence = require('run-sequence');
 
 var route = {
   less: {
@@ -47,35 +48,39 @@ gulp.task('html', ['compile:css'], () => {
     .pipe($.useref({searchPath: ['.tmp', 'html', '.']}))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano({safe: true, autoprefixer: false})))
-    //.pipe($.if('*.css', $.rev()))
-    //.pipe($.revReplace())
-    //.pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('assets', () => {
   return gulp.src(['assets/images/**/*', 'assets/js/*', 'assets/css/*'])
+    .pipe(rename({prefix: 'captiveportal-'}))
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('watch', function(){
-  gulp.watch(route.less.lib, ['compile:css']);
-  gulp.watch('./*.html').on('change', browserSync.reload);
+gulp.task('html-watch', ['html'], function (done) {
+    browserSync.reload();
+    done();
 });
 
-gulp.task('serve', function() {
+gulp.task('serve', ['html'], function() {
     browserSync.init({
         server: {
           baseDir: ['.tmp', './dist'],
         }
     });
+
+    gulp.watch(route.less.lib, ['compile:css']);
+    gulp.watch('./*.html', ['html-watch']);
 });
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('build', ['clean', 'html', 'compile:css', 'assets'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+gulp.task('build',  () => {
+  runSequence('clean', ['html', 'compile:css', 'assets'], () => {
+    return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  });
 });
 
-gulp.task('default', ['watch', 'html', 'assets', 'serve']);
+
+// gulp.task('default', ['html', 'assets', 'serve']);
 

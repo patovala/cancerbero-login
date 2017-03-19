@@ -34,6 +34,7 @@
     "lost": "^8.0.0",
     "postcss-custom-media": "^5.0.1",
     "postcss-media-minmax": "^2.1.2",
-    "rucksack-css": "^0.9.1"
+    "rucksack-css": "^0.9.1",
+    "run-sequence": "^1.2.2"
   }
 }
